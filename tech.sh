@@ -43,7 +43,7 @@ yes|pkg update -y && yes|pkg upgrade -y && clear
 
 print_step "Instalando dependencias..."
 sleep 1
-pkg install -y zsh git curl wget tsu python zoxide neofetch lsd bat termux-api && clear
+yes|pkg install -y zsh git curl wget tsu python zoxide neofetch lsd bat termux-api && clear
 
 print_step "Configurando Zsh como shell predeterminado..."
 chsh -s zsh
