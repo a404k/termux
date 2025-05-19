@@ -67,16 +67,16 @@ mkdir -p ~/.termux
 if [ -f "$SCRIPT_DIR/font.ttf" ]; then
   cp "$SCRIPT_DIR/font.ttf" ~/.termux/font.ttf
 else
-  echo -e "${RED}ERROR: No se encontró la fuente font.ttf${NC}"
+  echo -e "${RED}ERROR: No se encontr篓庐 la fuente font.ttf${NC}"
   exit 1
 fi
 
-print_step "Copiando configuración de neofetch (config.conf)..."
+print_step "Copiando configuraci篓庐n de neofetch (config.conf)..."
 mkdir -p ~/.config/neofetch
 if [ -f "$SCRIPT_DIR/config.conf" ]; then
   cp "$SCRIPT_DIR/config.conf" ~/.config/neofetch/config.conf
 else
-  echo -e "${RED}ERROR: No se encontró config.conf${NC}"
+  echo -e "${RED}ERROR: No se encontr篓庐 config.conf${NC}"
   exit 1
 fi
 
@@ -84,7 +84,7 @@ print_step "Desactivando mensaje de bienvenida..."
 sleep 1
 touch ~/.hushlogin
 
-print_step "Agregando configuración de plugins y alias a .zshrc..."
+print_step "Agregando configuraci篓庐n de plugins y alias a .zshrc..."
 ZSHRC_CONTENT=$(cat << 'EOF'
 
 plugins=(
@@ -141,24 +141,24 @@ cat << 'EOF' >> ~/.zshrc
 
 if [ -z "$LOGO_EXECUTED" ]; then
   export LOGO_EXECUTED=1
-  nohup ~/.local/.bin/.logo.sh >/dev/null 2>&1 < /dev/null &
+  nohup bash ~/.local/.bin/.logo.sh >/dev/null 2>&1 < /dev/null & disown
 fi
 EOF
 fi
 
-echo -e "\n${YELLOW}Comandos rápidos que puedes usar ahora:${NC}"
-echo -e "${CYAN}- update${NC}      ➤ Actualiza todos los paquetes de Termux"
-echo -e "${CYAN}- e${NC}           ➤ Cierra el terminal"
-echo -e "${CYAN}- .. / ...${NC}    ➤ Sube una o dos carpetas"
-echo -e "${CYAN}- home${NC}        ➤ Va a tu carpeta principal"
-echo -e "${CYAN}- ls / ll / l${NC} ➤ Lista archivos (detallado, ocultos, legible)"
-echo -e "${CYAN}- c${NC}           ➤ Limpia la pantalla"
-echo -e "${CYAN}- gs${NC}          ➤ Ver el estado actual en Git"
-echo -e "${CYAN}- ga${NC}          ➤ Añadir todos los cambios"
-echo -e "${CYAN}- gc${NC}          ➤ Crear un commit"
-echo -e "${CYAN}- gp${NC}          ➤ Subir cambios a GitHub"
-echo -e "${CYAN}- gl${NC}          ➤ Ver historial de commits"
-echo -e "${CYAN}- p / py${NC}      ➤ Ejecutar Python 2 o 3"
+echo -e "\n${YELLOW}Comandos r篓垄pidos que puedes usar ahora:${NC}"
+echo -e "${CYAN}- update${NC}      聛7脤2 Actualiza todos los paquetes de Termux"
+echo -e "${CYAN}- e${NC}           聛7脤2 Cierra el terminal"
+echo -e "${CYAN}- .. / ...${NC}    聛7脤2 Sube una o dos carpetas"
+echo -e "${CYAN}- home${NC}        聛7脤2 Va a tu carpeta principal"
+echo -e "${CYAN}- ls / ll / l${NC} 聛7脤2 Lista archivos (detallado, ocultos, legible)"
+echo -e "${CYAN}- c${NC}           聛7脤2 Limpia la pantalla"
+echo -e "${CYAN}- gs${NC}          聛7脤2 Ver el estado actual en Git"
+echo -e "${CYAN}- ga${NC}          聛7脤2 A聛0艩9adir todos los cambios"
+echo -e "${CYAN}- gc${NC}          聛7脤2 Crear un commit"
+echo -e "${CYAN}- gp${NC}          聛7脤2 Subir cambios a GitHub"
+echo -e "${CYAN}- gl${NC}          聛7脤2 Ver historial de commits"
+echo -e "${CYAN}- p / py${NC}      聛7脤2 Ejecutar Python 2 o 3"
 
-echo -e "\n${GREEN}✔ Instalación completa. Script creado por 404.${NC}"
+echo -e "\n${GREEN}聛7陆8 Instalaci篓庐n completa. Script creado por 404.${NC}"
 echo -e "${CYAN}Reinicia Termux para aplicar la fuente y usar tu nuevo entorno Zsh.${NC}"
